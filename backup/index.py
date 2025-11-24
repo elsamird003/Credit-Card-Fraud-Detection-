@@ -8,7 +8,7 @@ data = pd.read_csv("./envi/include/dataset/creditcard.csv")
 print(data.head())
 
 
-print(data.describe()) 
+print(data.describe())
 
 
 # Analyzing class distribution
@@ -24,19 +24,14 @@ print('Valid Transactions: {}'.format(len(data[data['Class'] == 0])))
 
 
 ##Exploring Transaction Amounts
-# print("Amount details of the fraudulent transaction")
-# fraud.Amount.describe()
+print("Amount details of the fraudulent transaction\n")
+fraud.Amount.describe()
 
 
-## Fraud Amount describe
-print("Amount details of the fraudulent transaction")
-print (fraud.Amount.describe())
+print("details of valid transaction\n")
+valid.Amount.describe()
 
-## details of valid transaction
-print("details of valid transaction")
-print(valid.Amount.describe())  ## From the output we observe that fraudulent transactions tend to have higher average amounts which is important in fraud detection.
-
-#Plotting Correlation Matrix
+##Plotting Correlation Matrix
 corrmat = data.corr()
 fig = plt.figure(figsize = (12, 9))
 sns.heatmap(corrmat, vmax = .8, square = True)
@@ -46,17 +41,17 @@ plt.show()
 
 ##Preparing Data for Modeling
 
-# X = data.drop(['Class'], axis = 1)
-# Y = data["Class"]
-# print(X.shape)
-# print(Y.shape)
+X = data.drop(['Class'], axis = 1)
+Y = data["Class"]
+print(X.shape)
+print(Y.shape)
 
-# xData = X.values
-# yData = Y.values
+xData = X.values
+yData = Y.values
 
-# from sklearn.model_selection import train_test_split
-# xTrain, xTest, yTrain, yTest = train_test_split(
-#         xData, yData, test_size = 0.2, random_state = 42)
+from sklearn.model_selection import train_test_split
+xTrain, xTest, yTrain, yTest = train_test_split(
+        xData, yData, test_size = 0.2, random_state = 42)
 
 
 ## Building and training the model
