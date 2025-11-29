@@ -14,6 +14,22 @@ This project uses **supervised machine learning** to detect fraudulent credit ca
 - **F1-score (fraud class)**: ~80%
 - **ROC-AUC**: ~0.97
 
+ <img width="861" height="450" alt="Screenshot 2025-10-05 at 7 29 39 PM" src="https://github.com/user-attachments/files/23835189/Figure_01.pdf"/>
+  This project utilizes machine learning, specifically a Random Forest Classifier, to build a Credit Card Fraud Detection system. The core goal is to accurately distinguish between legitimate (Normal) and fraudulent (Fraud) transactions.
+
+Key Accomplishments Illustrated by the Confusion Matrix
+
+The confusion matrix provides a comprehensive view of the model's performance on the test data:
+
+High Accuracy on Normal Transactions (True Negatives): The model correctly identified 56,862 transactions as Normal when they were truly Normal. This demonstrates strong performance in handling the majority class.
+
+High Precision/Low False Alarm Rate: Only 2 Normal transactions were incorrectly flagged as Fraud (False Positives). This means that when the model predicts fraud, it is highly reliable.
+
+Effective Fraud Capture (True Positives): The model successfully identified 78 actual fraudulent transactions (True Positives).
+
+Critical Misses (False Negatives): The most crucial area for improvement is the 20 fraudulent transactions that the model failed to detect (False Negatives). Addressing these missed cases is essential to minimize financial losses.
+
+
 ⚠️ This highlights that traditional accuracy is not reliable for imbalanced datasets.
 
 ---
